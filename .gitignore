@@ -1,0 +1,23 @@
+# stash: default ignore (safe to edit; stash won't overwrite this file)
+node_modules
+.gradle/
+build/
+dist/
+out/
+.next/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+*.keystore
+*.jks
+*.apk
+*.aab
+*.log
+.DS_Store
+
+# research recordings (hundreds of MB): kept on disk, not in git
+data/
+local.properties
