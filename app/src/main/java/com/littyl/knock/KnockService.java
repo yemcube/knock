@@ -368,6 +368,12 @@ public class KnockService extends Service implements SensorEventListener {
         main.post(() -> perform(orient, spot, count, ks));
     }
 
+    /** Run a command as if its knocks were just heard (shell-only test trigger, see DemoKnock). */
+    void simulate(int spot, int count) {
+        String orient = orientation();
+        main.post(() -> perform(orient, spot, count, new ArrayList<>()));
+    }
+
     private void perform(String orient, int spot, int count, List<Knock> ks) {
         String slot = Prefs.slot(spot, count);
         String action = Prefs.action(prefs, Prefs.active(prefs), slot);

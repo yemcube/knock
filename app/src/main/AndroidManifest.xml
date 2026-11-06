@@ -35,6 +35,16 @@
             android:exported="false"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
 
+        <!-- Shell-only test trigger (emulators / store videos): DUMP is held only by shell and system. -->
+        <receiver
+            android:name=".DemoKnock"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="com.littyl.knock.DEMO" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".KnockService"
             android:exported="false"
